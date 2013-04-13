@@ -1,0 +1,16 @@
+﻿@model NoMoreFactories.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Home"))
+{
+    @Html.DropDownListFor(model => model.SelectedId, new SelectList(Model.Choices, "Id", "Text"), "Choose... ")
+    <br />
+    <input type="submit" value="Create" />
+}
+
+
+
